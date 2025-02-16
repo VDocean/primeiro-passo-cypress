@@ -1,14 +1,14 @@
 import userData from '../fixtures/userData.json'
 import LoginPage from '../pages/loginPage'
+import DashBoardPage from '../pages/dashboardPage'
 
 const login=new LoginPage()
+const dashPage=new DashBoardPage()
 
 describe('Orange HRM Tests', () => {
 
   const selectorsList={
-    sectionTitleTopBar: ".oxd-topbar-header-breadcrumb-module",
-    dashboardGrid: ".oxd-topbar-header-breadcrumb-module",
-    myInfoButton: '[href="/web/index.php/pim/viewMyDetails"]',
+    
     firstNameField:'[name="firstName"]',
     lastNameField:'[name="lastName"]',
     genericField: ".oxd-input--active",
@@ -24,9 +24,11 @@ describe('Orange HRM Tests', () => {
 
     login.acessLoginPage()
     login.loginWithUser(userData.userSucess.userName,userData.userSucess.password)
+    dashPage.verifyIfDashboard()
+    dashPage.GetInMyInfo()
 
-    //cy.location('pathname').should('equal','/web/index.php/dashboard/index')
-    //cy.get(selectorsList.myInfoButton).click()
+    
+    
     //cy.get(selectorsList.firstNameField).clear().type("First Name Teste")
     //cy.get(selectorsList.lastNameField).clear().type("Last Name Teste")
     //cy.get(selectorsList.genericField).eq(4).clear().type("Employeed")
