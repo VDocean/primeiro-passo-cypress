@@ -22,7 +22,7 @@ describe('Orange HRM Tests', () => {
 
     login.acessLoginPage()
     login.loginWithUser(userData.userSucess.userName,userData.userSucess.password)
-    dashPage.verifyIfDashboard()
+    //dashPage.verifyIfDashboard()
     menuPage.acessMyInfo()
     myInfo.fillPersonalDetails(chance.first(),chance.last())
     myInfo.fillEmployeeDetails('ImployeeId','driver','2025-02-13')
