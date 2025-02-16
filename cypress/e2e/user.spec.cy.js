@@ -1,9 +1,11 @@
 import userData from '../fixtures/userData.json'
 import LoginPage from '../pages/loginPage'
 import DashBoardPage from '../pages/dashboardPage'
+import MenuPage from '../pages/menuPage'
 
 const login=new LoginPage()
 const dashPage=new DashBoardPage()
+const menuPage= new MenuPage()
 
 describe('Orange HRM Tests', () => {
 
@@ -25,7 +27,7 @@ describe('Orange HRM Tests', () => {
     login.acessLoginPage()
     login.loginWithUser(userData.userSucess.userName,userData.userSucess.password)
     dashPage.verifyIfDashboard()
-    dashPage.GetInMyInfo()
+    menuPage.acessMyInfo()
 
     
     
