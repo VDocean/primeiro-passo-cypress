@@ -12,7 +12,7 @@ const myInfo=new MyInfoPage()
 describe('Orange HRM Tests', () => {
 
   
-  it.only('User Info Update Success', () => {
+  it('User Info Update Success', () => {
 
     login.acessLoginPage()
     login.loginWithUser(userData.userSucess.userName,userData.userSucess.password)
@@ -23,17 +23,6 @@ describe('Orange HRM Tests', () => {
     myInfo.fillStatus()
     myInfo.saveForm()
 
-
-
-  
     
   })
-    it.skip('Login - Fail', () => {
-      cy.visit('/auth/login')
-      cy.get(selectorsList.usernameField).type(userData.userFail.username)
-      cy.get(selectorsList.passwordField).type(userData.userFail.password)
-      cy.get(selectorsList.loginButton).click()
-      cy.get(selectorsList.wrongCredentialAlert)
-      
-    }) 
 })
